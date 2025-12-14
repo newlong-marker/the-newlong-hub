@@ -3,63 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE NEWLONG HUB - Northeast Traditional Collection</title>
+    <title>THE NEWLONG HUB - Authentic Northeast Indian Collection</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="navbar-container">
+    <div id="welcome-screen">
+        <h1 class="welcome-text">THE NEWLONG HUB</h1>
+        <div class="loader"></div>
+    </div>
+    
+    <header class="main-header">
+        <div class="container header-container">
             <div class="logo">
-                <h1>THE NEWLONG HUB</h1>
-                <span class="sub-text">Explore Plus <i class="fas fa-plus-star"></i></span>
+                <a href="index.html">THE N HUB</a>
             </div>
             
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search for products, brands and more">
-                <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
+            <nav class="category-nav">
+                <a href="#men-products" data-category="men">Men</a>
+                <a href="#women-products" data-category="women">Women</a>
+                <a href="#kids-products" data-category="kids">Kids</a>
+                <a href="#home-decor-products" data-category="home-decor">Home Decor</a>
+                <a href="#jewelry-products" data-category="jewelry">Jewelry</a>
+                <a href="#food-products" data-category="food">Food</a>
+            </nav>
+            
+            <div class="header-icons">
+                <div class="search-box">
+                    <input type="text" id="product-search" placeholder="Search for products, categories...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <a href="#" class="auth-btn" id="login-link"><i class="fas fa-user"></i> Login / Signup</a>
             </div>
-
-            <div class="nav-links">
-                <a href="#" class="login-btn">Login</a>
-                <a href="#">Become a Seller</a>
-                <a href="#">More <i class="fas fa-angle-down"></i></a>
-                <a href="#" class="cart"><i class="fas fa-shopping-cart"></i> Cart</a>
-            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <div class="sub-header">
-        <div class="category-item">Mekhela Sador</div>
-        <div class="category-item">Naga Shawls</div>
-        <div class="category-item">Manipuri Phanek</div>
-        <div class="category-item">Mizo Puan</div>
-        <div class="category-item">Tripura Risa</div>
-        <div class="category-item">Handicrafts</div>
-        <div class="category-item">Jewelry</div>
-    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="#men-products" data-category="men"><i class="fas fa-male"></i> Men</a>
+        <a href="#women-products" data-category="women"><i class="fas fa-female"></i> Women</a>
+        <a href="#kids-products" data-category="kids"><i class="fas fa-child"></i> Kids</a>
+        <a href="#home-decor-products" data-category="home-decor"><i class="fas fa-couch"></i> Home Decor</a>
+        <a href="#jewelry-products" data-category="jewelry"><i class="fas fa-gem"></i> Jewelry</a>
+        <a href="#food-products" data-category="food"><i class="fas fa-utensils"></i> Food</a>
+        <hr>
+        <a href="#" id="mobile-login-link"><i class="fas fa-sign-in-alt"></i> Login / Signup</a>
+    </nav>
 
-    <div class="banner">
-        <div class="banner-content">
-            <h2>The Biggest Northeast Sale</h2>
-            <p>Traditional Wear Up To 50% Off</p>
-        </div>
-    </div>
+    <main>
+        
+        <section class="hero-slider-section">
+            <div class="slider" id="auto-slider">
+                <div class="slide" data-index="0">
+                    <div class="slide-image" style="background-image: url('C:\Users\hp\Downloads\Mew.jpg');"></div>
+                    <div class="slide-content">
+                        <h2>Chirstmas Mega Sale!</h2>
+                        <p>Get **30% OFF** on all traditional Mekhela Chadors. Shop Now!</p>
+                        <a href="#" class="btn-shop">Shop Women's Wear</a>
+                    </div>
+                </div>
 
-    <main class="main-container">
-        <h2>Recommended For You</h2>
-        <div id="product-grid" class="product-grid">
+                <div class="slide" data-index="1">
+                    <div class="slide-image" style="background-image: url('c:/img/banner-discount.jpg');"></div>
+                    <div class="slide-content">
+                        <h2>Flat ₹500 OFF</h2>
+                        <p>On hand-woven shawls. Limited time discount. Don't miss out!</p>
+                        <a href="#" class="btn-shop">View Shawl Collection</a>
+                    </div>
+                </div>
+
+                
+
+                <div class="slide" data-index="3">
+                    <div class="slide-image" style="background-image: url('c:/img/banner-new-arrival.jpg');"></div>
+                    <div class="slide-content">
+                        <h2>New Arrivals: Bamboo Decor</h2>
+                        <p>Sustainable and stylish home decor from Tripura & Mizoram.</p>
+                        <a href="#" class="btn-shop">Explore Home Decor</a>
+                    </div>
+                </div>
             </div>
+            <div class="slider-dots" id="slider-dots"></div>
+        </section>
+
+        <section class="product-grid-section container">
+            <h2 class="section-title"> Featured Northeast Picks</h2>
+            <div class="product-grid" id="product-grid">
+
+                <div class="product-card" data-category="men">
+                    <span class="badge sale-badge">SALE</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/men-product1.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Men</span>
+                        <h3 class="product-name">Naga Warrior Shawl</h3>
+                        <p class="price">₹1,750</p>
+                        <p class="short-desc">Authentic Angami hand-woven shawl, 100% Cotton.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Naga Warrior Shawl" 
+                                data-price="1,750">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="women">
+                    <span class="badge new-badge">NEW</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/women-product1.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Women</span>
+                        <h3 class="product-name">Assamese Silk Saree</h3>
+                        <p class="price">₹4,290</p>
+                        <p class="short-desc">Pure Muga silk, exquisite traditional motifs.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Assamese Silk Saree" 
+                                data-price="4,290">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="home-decor">
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/homedecor-product1.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Home Decor</span>
+                        <h3 class="product-name">Bamboo Wall Art</h3>
+                        <p class="price">₹950</p>
+                        <p class="short-desc">Handcrafted decorative wall hanging from Manipur.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Bamboo Wall Art" 
+                                data-price="950">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="jewelry">
+                    <span class="badge discount-badge">-15%</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/jewelry-product1.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Jewelry</span>
+                        <h3 class="product-name">Aadorned Necklace</h3>
+                        <p class="price">₹1,190</p>
+                        <p class="short-desc">Traditional silver-plated tribal necklace.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Aadorned Necklace" 
+                                data-price="1190">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="food">
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('C:\Users\hp\Downloads\Mew.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Food</span>
+                        <h3 class="product-name">Raja Mircha Pickle</h3>
+                        <p class="price">₹399</p>
+                        <p class="short-desc">Nagaland's famous King Chilli pickle (Ghost Pepper).</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Raja Mircha Pickle" 
+                                data-price="399">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="men">
+                    <span class="badge new-badge">NEW</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/men-product2.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Men</span>
+                        <h3 class="product-name">Khasi Waistcoat</h3>
+                        <p class="price">₹2,100</p>
+                        <p class="short-desc">Formal cotton waistcoat with traditional border.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Khasi Waistcoat" 
+                                data-price="2100">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="women">
+                    <span class="badge sale-badge">SALE</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('C:\Users\hp\Downloads\Mew.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Women</span>
+                        <h3 class="product-name">Manipuri Phanek</h3>
+                        <p class="price">₹1,499</p>
+                        <p class="short-desc">Traditional wrap-around skirt, comfortable cotton blend.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Manipuri Phanek" 
+                                data-price="1499">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kids">
+                    <span class="badge new-badge">NEW</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/kids-product1.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Kids</span>
+                        <h3 class="product-name">Mizo Frock Set</h3>
+                        <p class="price">₹890</p>
+                        <p class="short-desc">Colorful traditional attire for girls, age 4-6.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Mizo Frock Set" 
+                                data-price="890">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="home-decor">
+                    <span class="badge discount-badge">-10%</span>
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/homedecor-product2.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Home Decor</span>
+                        <h3 class="product-name">Woven Storage Basket</h3>
+                        <p class="price">₹650</p>
+                        <p class="short-desc">Cane and bamboo utility basket, sustainable product.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Woven Storage Basket" 
+                                data-price="650">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="food">
+                    <div class="product-image-container">
+                        <div class="product-image" style="background-image: url('c:/img/food-product2.jpg');"></div>
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">Food</span>
+                        <h3 class="product-name">Arunachali Rice Wine Starter</h3>
+                        <p class="price">₹450</p>
+                        <p class="short-desc">Authentic local starter for rice beer/wine preparation.</p>
+                        <button class="whatsapp-order-btn" 
+                                data-name="Arunachali Rice Wine Starter" 
+                                data-price="450">
+                            <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+
+                <div id="login-form" class="auth-form active-form">
+                    <h3>Welcome Back!</h3>
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="login-email-phone">Email or Phone</label>
+                            <input type="text" id="login-email-phone" name="email_phone" required>
+                            <div class="validation-error" id="login-email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                            <div class="validation-error" id="login-password-error"></div>
+                        </div>
+                        <button type="submit" class="submit-btn">Login Securely</button>
+                        <p class="forgot-password">Forgot Password?</p>
+                    </form>
+                </div>
+
+                <div id="signup-form" class="auth-form">
+                    <h3>Create Your Account</h3>
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="signup-fullname">Full Name</label>
+                            <input type="text" id="signup-fullname" name="fullname" required>
+                            <div class="validation-error" id="signup-fullname-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-state">State (Northeast India)</label>
+                            <select id="signup-state" name="state" required>
+                                <option value="" disabled selected>Select your state</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Sikkim">Sikkim</option>
+                            </select>
+                            <div class="validation-error" id="signup-state-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-contact">Phone Number or Email</label>
+                            <input type="text" id="signup-contact" name="contact" required>
+                            <div class="validation-error" id="signup-contact-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" name="password" required>
+                            <div class="validation-error" id="signup-password-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input type="password" id="signup-confirm-password" name="confirm-password" required>
+                            <div class="validation-error" id="signup-confirm-password-error"></div>
+                        </div>
+                        <button type="submit" class="submit-btn" id="signup-submit-btn">Create Account</button>
+                        <p class="login-prompt">Already have an account? <a href="#" class="switch-tab-link" data-tab="login">Login here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <footer>
-        <p>&copy; 2024 THE NEWLONG HUB. All rights reserved.</p>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            
+            <div class="footer-col about-col">
+                <h4>About THE NEWLONG HUB</h4>
+                <p>Curating the finest and most authentic traditional products from the eight states of Northeast India. Committed to promoting local artisans and sustainable practices.</p>
+            </div>
+            
+            <div class="footer-col link-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Exchange</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h4>Contact & Support</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Agartala, Tripura, India</p>
+                <p><i class="fas fa-envelope"></i> support@newlonghub.com</p>
+                <p><i class="fas fa-phone"></i> +91 7630808203</p>
+                <a href="https://wa.me/917630808203?text=Hello%20THE%20NEWLONG%20HUB,%20I%20have%20a%20general%20query." target="_blank" class="footer-whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Chat Now
+                </a>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1CCL9EufZA/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nexxlover07?igsh=MXVxNXNxenJueWFqaA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+                <p class="copyright">&copy; 2025 THE NEWLONG HUB. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
